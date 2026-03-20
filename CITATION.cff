@@ -1,0 +1,42 @@
+abstract: "Catalog app for Imageomics code, data, models, and spaces hosted on GitHub and Hugging Face. It was designed for improved discoverability and searchability of Imageomics products, and the content is updated in real-time through calls to the GitHub and Hugging Face APIs. The repository also serves as a template for others looking to create a similar website to catalog their group's code, data, models, and demos."
+authors:
+- family-names: "Campolongo"
+  given-names: "Elizabeth G."
+  affiliation: "The Ohio State University"
+  orcid: "https://orcid.org/0000-0003-0846-2413"
+- family-names: "Frasure"
+  given-names: "Emerson"
+  affiliation: "The Ohio State University"
+- family-names: "Radhakrishnan"
+  given-names: "Balaji"
+  affiliation: "The Ohio State University"
+cff-version: 1.2.0
+date-released: "2026-03-20"
+identifiers:
+  - description: "The GitHub release URL of tag v4.0.0."
+    type: url
+    value: "https://github.com/Imageomics/catalog/releases/tag/v4.0.0"
+  - description: "The GitHub URL of the commit tagged with v4.0.0."
+    type: url
+    value: "https://github.com/Imageomics/catalog/tree/d1200ca42bc46682e2a3c7d2eef6c64526b521a6"
+keywords:
+  - imageomics
+  - code
+  - data
+  - models
+  - spaces
+  - "GitHub"
+  - "Hugging Face"
+  - APIs
+  - inventory
+  - catalog
+  - "keyword search"
+  - discoverability
+  - searchability
+license: MIT
+message: "If you use this software, please cite it as below."
+repository-code: "https://github.com/Imageomics/catalog"
+title: "Imageomics Catalog"
+version: "4.0.0"
+doi: "10.5281/zenodo.17602801"
+type: software
