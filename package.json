@@ -1,7 +1,7 @@
 {
   "name": "catalog",
-  "version": "4.0.0",
-  "description": "Repository for web-based Imageomics code, data, model, and spaces catalog. This catalog is designed to use the GitHub API for searching all code repositories created under the [Imageomics GitHub Organization](https://github.com/Imageomics) and the Hugging Face API for searching all dataset, model, and spaces repositories created under the [Imageomics Hugging Face Organization](https://huggingface.co/imageomics).",
+  "version": "1.0.0",
+  "description": "Repository for web-based ABC-Center code, data, model, and spaces catalog. This catalog is designed to use the GitHub API for searching all code repositories created under the [ABC-Center GitHub Organization](https://github.com/ABC-Center) and the Hugging Face API for searching all dataset, model, and spaces repositories created under the [ABC-Center Hugging Face Organization](https://huggingface.co/ABC-Center).",
   "main": "main.js",
   "scripts": {
     "dev": "vite",
@@ -10,10 +10,9 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Imageomics/catalog.git"
+    "url": "git+https://github.com/ABC-Center/catalog.git"
   },
   "keywords": [
-      "imageomics",
       "code",
       "data",
       "models",
@@ -34,9 +33,9 @@
   },
   "type": "module",
   "bugs": {
-    "url": "https://github.com/Imageomics/catalog/issues"
+    "url": "https://github.com/ABC-Center/catalog/issues"
   },
-  "homepage": "https://github.com/Imageomics/catalog#readme",
+  "homepage": "https://github.com/ABC-Center/catalog#readme",
   "dependencies": {
     "js-yaml": "^4.1.0"
   },
