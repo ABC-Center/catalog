@@ -33,6 +33,7 @@ ADDITIONAL_REPOS:
   - "uoguelph-mlrg/MassID45"
   - "RolnickLab/Open-Insect"
   - "FrsLry/ms_acceleration"
+  - "Imageomics/Collaborative-distributed-science-guide"
 
 # Typography
 FONT_FAMILY: Inter    # Font family for the site
