@@ -7,7 +7,7 @@ GITHUB_ORG_NAME: ABC-Center         # Display name for GitHub organization (can 
 CATALOG_REPO_NAME: catalog          # Repository name for the catalog itself (used for stats badge)
   
 # Branding
-CATALOG_TITLE: ABC-Center Catalog
+CATALOG_TITLE: ABC Global Center Catalog
 CATALOG_DESCRIPTION: "Explore and discover public code, datasets, models, and spaces."
 LOGO_URL: "https://github.com/ABC-Center/ABC-guide/blob/main/docs/logos/digital/logo_icon_for_web_and_digital_content_square.png?raw=true"
 FAVICON_URL: "https://github.com/ABC-Center/ABC-guide/blob/main/docs/logos/digital/logo_icon_for_web_and_digital_content_square.png?raw=true"
