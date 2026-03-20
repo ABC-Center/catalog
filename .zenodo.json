@@ -4,19 +4,10 @@
           "name": "Campolongo, Elizabeth G.",
           "orcid": "https://orcid.org/0000-0003-0846-2413",
           "affiliation": "The Ohio State University"
-      },
-      {
-        "name": "Frasure, Emerson",
-        "affiliation": "The Ohio State University"
-      },
-      {
-          "name": "Radhakrishnan, Balaji",
-          "affiliation": "The Ohio State University"
       }
     ],
-    "description": "<p>Catalog app for Imageomics code, data, models, and spaces hosted on GitHub and Hugging Face. It was designed for improved discoverability and searchability of Imageomics products, and the content is updated in real-time through calls to the GitHub and Hugging Face APIs.</p>\n<p>Catalog website: <a href=\"https://imageomics.github.io/catalog/\">imageomics.github.io/catalog/</a>.</p>\n<p>The repository also serves as a template for others looking to create a similar website to catalog their group's code, data, models, and demos.</p>",
+    "description": "<p>Catalog app for ABC Center code, data, models, and spaces hosted on GitHub and Hugging Face. Centralized resource to search ABC Center-affiliated products, the content is updated in real-time through calls to the GitHub and Hugging Face APIs. This repository was generated from the Imageomics Catalog Template.</p>\n<p>Catalog website: <a href=\"https://ABC-Center.github.io/catalog/\">ABC-Center.github.io/catalog/</a>.</p>\n<p>.</p>",
     "keywords": [
-      "imageomics",
       "code",
       "data",
       "models",
@@ -30,13 +21,16 @@
       "discoverability",
       "searchability"
     ],
-    "title": "Imageomics Catalog",
-    "version": "4.0.0",
+    "title": "ABC Center Catalog",
+    "version": "1.0.0",
     "license": "MIT",
     "publication_date": "2026-03-20",
     "grants": [
         {
-            "id": "021nxhr62::2118240"
+            "id": "021nxhr62::2330423"
         }
+    ],
+    "references": [
+      "Campolongo, E. G., Frasure, E., & Radhakrishnan, B. (2026). Imageomics Catalog (Version 4.0.0) [Computer software]. https://doi.org/10.5281/zenodo.17602801"
     ] 
 }
