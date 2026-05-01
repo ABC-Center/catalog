@@ -6,7 +6,9 @@
   "scripts": {
     "dev": "vite",
     "build": "node scripts/fetch-releases.js && vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "test": "vitest run",
+    "test:watch": "vitest"
   },
   "repository": {
     "type": "git",
@@ -42,6 +44,7 @@
   "devDependencies": {
     "@tailwindcss/vite": "^4.2.1",
     "tailwindcss": "^4.2.1",
-    "vite": "^7.3.2"
+    "vite": "^7.3.2",
+    "vitest": "^4.1.5"
   }
 }

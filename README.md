@@ -54,6 +54,14 @@ nvm use
 
 A `.nvmrc` file is included, so `nvm use` will automatically select the correct version in the project directory.
 
+## Testing
+
+Tests are written with [Vitest](https://vitest.dev/) and run automatically in CI on every pull request to `main`. To run them locally: `npm test` (single run) or `npm run test:watch` (watch mode).
+
+`tests/validateConfig.test.js` tests the validator logic in `src/validateConfig.js`, which is also used by the `fetch-releases` and `export-tags` scripts. `tests/config.integration.test.js` confirms that the real `public/config.yaml` passes that same validation.
+
+### Running Locally
+
 Install dependencies and start the dev server from the repo root:
 
 ```console
