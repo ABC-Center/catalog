@@ -8,7 +8,7 @@ This repository was generated and personalized from the [Imageomics Catalog](htt
 
 The website is styled using the [tailwindcss](https://tailwindcss.com/) package.
 
-* **Real-time Data Fetching:** Displays all public Imageomics repositories, fetched through the GitHub and Hugging Face APIs. Includes semantically meaningful virtual markers:
+* **Real-time Data Fetching:** Displays all public organization repositories, fetched through the GitHub and Hugging Face APIs. Includes semantically meaningful virtual markers:
     * "New" badge highlights products created within the last 30 days;
     * "🚀 version-tag" badge indicates a new release within the last 2 weeks for GitHub repos, and links to that release;
     * Star (⭐️) or like (❤️) counts displayed for GitHub or Hugging Face repos, respectively;
@@ -28,8 +28,7 @@ The site runs based on four primary files:
 * `public/config.yaml`: Contains all customizable settings including organization names, colors, branding, and API settings. This is the main file to edit for personalization. Placed in `public/` so Vite copies it to `dist/` without bundling, keeping it editable after deployment.
 * `index.html`: The main HTML file that provides the structure of the webpage and links to the CSS and JavaScript files. Config values are applied dynamically from `config.yaml`.
 * `style.css`: Custom styling for the application, including color schemes, layout, and animations. Colors are set via CSS custom properties that are populated from `config.yaml`.
-* `main.js`: Handles the application's logic, including API calls, data filtering, sorting, and dynamic rendering of the catalog items.
-  * **Note:** Model API calls do ***not*** return `cardData` unless explicitly fetched *by model*, so there is extra logic required to fetch Model metadata.
+* `main.js`: Handles the application's logic, including config loading, API calls, data filtering, sorting, and dynamic rendering of the catalog items. Relies on the build-time Node script `fetch-releases.js` for version-tag badge feature.
 
 Two additional files support the build tooling:
 
@@ -53,6 +52,14 @@ nvm use
 ```
 
 A `.nvmrc` file is included, so `nvm use` will automatically select the correct version in the project directory.
+
+### Formatting Standard
+
+**What is needed:** VS Code "Format on Save" enabled with CSS & HTML format enabled or [linter(s)](https://github.com/caramelomartins/awesome-linters) for package languages (JavaScript, HTML, and CSS) with the following settings:
+
+  * **Indent Size:** 4
+  * **Wrap Line Length:** 120
+  * **Rules:** Remove trailing whitespace and empty tabs.
 
 ## Testing
 
