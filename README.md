@@ -1,6 +1,6 @@
 # AI & Biodiversity Change Global Center Catalog
 
-Repository for web-based ABC Center code, data, model, and spaces catalog. This catalog is designed to use the GitHub API for searching all code repositories created under the [ABC GitHub Organization](https://github.com/ABC-Center) and the Hugging Face API for searching all dataset, model, and spaces repositories created under the [ABC Hugging Face Organization](https://huggingface.co/ABC-Center). Non-ABC Org GitHub repositories can be manually included through the `ADDITIONAL_REPOS` parameter in the [config file](public/config.yaml). 
+Repository for web-based ABC Center code, data, model, and spaces catalog. This catalog is designed to use the GitHub API for searching all code repositories created under the [ABC GitHub Organization](https://github.com/ABC-Center) and the Hugging Face API for searching all dataset, model, and spaces repositories created under the [ABC Hugging Face Organization](https://huggingface.co/ABC-Center). Non-ABC Org GitHub and Hugging Face repositories can be manually included through the `ADDITIONAL_REPOS` and `ADDITIONAL_HF_REPOS` parameters, respectively, in the [config file](public/config.yaml). 
 
 This repository was generated and personalized from the [Imageomics Catalog](https://github.com/Imageomics/catalog). The following sections are pulled from the source repo.
 
@@ -8,7 +8,7 @@ This repository was generated and personalized from the [Imageomics Catalog](htt
 
 The website is styled using the [tailwindcss](https://tailwindcss.com/) package.
 
-* **Real-time Data Fetching:** Displays all public organization repositories, fetched through the GitHub and Hugging Face APIs. Includes semantically meaningful virtual markers:
+* **Real-time Data Fetching:** Displays all public ABC Center repositories, fetched through the GitHub and Hugging Face APIs. Includes semantically meaningful virtual markers:
     * "New" badge highlights products created within the last 30 days;
     * "🚀 version-tag" badge indicates a new release within the last 2 weeks for GitHub repos, and links to that release;
     * Star (⭐️) or like (❤️) counts displayed for GitHub or Hugging Face repos, respectively;
@@ -18,7 +18,7 @@ The website is styled using the [tailwindcss](https://tailwindcss.com/) package.
 * **Sorting:** Sort items by last updated, date created, stars/likes ascending or descending, or alphabetically.
 * **URL Parameter Support:** Persist and share search states via URL hash (`#type=datasets&q=fish`) or query parameters (`?type=datasets`). Supports `type`, `q` (search query), `sort`, and `tag` parameters.
 * **Responsive Design:** The layout is optimized for use on computers and mobile devices.
-* **Thematic Styling:** Uses Imageomics color scheme for a cohesive look and feel.
+* **Thematic Styling:** Uses ABC color scheme for a cohesive look and feel.
 * **Longevity:** This site is run through GitHub Pages, ensuring continued access through GitHub without needing to otherwise provision dedicated infrastructure.
 
 ## Project Structure
