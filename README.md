@@ -43,7 +43,7 @@ Two additional files support the build tooling:
   * **Wrap Line Length:** 120
   * **Rules:** Remove trailing whitespace and empty tabs.
 
-## Local Testing
+## Prerequisites
 
 This project uses [Vite](https://vite.dev/) as a build tool and requires **Node.js 24** (Active LTS). You can check your current version with `node --version`. To install or update Node, visit [nodejs.org](https://nodejs.org/en/download) or use a version manager like [nvm](https://github.com/nvm-sh/nvm):
 
