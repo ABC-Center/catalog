@@ -42,6 +42,7 @@ ADDITIONAL_REPOS:
 
 # Array of Hugging Face repos from outside the org to include.
 # Each entry must specify "repo" (owner/name) and "type" (datasets, models, or spaces).
+# Organization names are case-sensitive in the Hugging Face API.
 # ADDITIONAL_HF_REPOS:
 #   - repo: "user/dataset-name"
 #     type: "datasets"
