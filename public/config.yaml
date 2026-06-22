@@ -50,8 +50,10 @@ ADDITIONAL_REPOS:
 #   - repo: "user/space-name"
 #     type: "spaces"
 ADDITIONAL_HF_REPOS:
-- "yuyan-chen/open-insect"
-- "chaenayo/PODS"
+  - repo: "yuyan-chen/open-insect"
+    type: "datasets"
+  - repo: "chaenayo/PODS"
+    type: "datasets"
 
 # Typography
 FONT_FAMILY: Inter    # Font family for the site
