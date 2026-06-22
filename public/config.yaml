@@ -38,6 +38,7 @@ ADDITIONAL_REPOS:
   - "RolnickLab/Open-Insect"
   - "FrsLry/ms_acceleration"
   - "Imageomics/Collaborative-distributed-science-guide"
+  - "kitzeslab/Kitzes_MethodsEcolEvo_manuscript_2025"
 
 # Array of Hugging Face repos from outside the org to include.
 # Each entry must specify "repo" (owner/name) and "type" (datasets, models, or spaces).
@@ -48,7 +49,9 @@ ADDITIONAL_REPOS:
 #     type: "models"
 #   - repo: "user/space-name"
 #     type: "spaces"
-ADDITIONAL_HF_REPOS: []
+ADDITIONAL_HF_REPOS:
+- "yuyan-chen/open-insect"
+- "chaenayo/PODS"
 
 # Typography
 FONT_FAMILY: Inter    # Font family for the site
