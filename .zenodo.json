@@ -6,12 +6,13 @@
           "affiliation": "The Ohio State University"
       }
     ],
-    "description": "<p>Catalog app for ABC Center code, data, models, and spaces hosted on GitHub and Hugging Face. Centralized resource to search ABC Center-affiliated products, the content is updated in real-time through calls to the GitHub and Hugging Face APIs. This repository was generated from the Imageomics Catalog Template.</p>\n<p>Catalog website: <a href=\"https://ABC-Center.github.io/catalog/\">ABC-Center.github.io/catalog/</a>.</p>\n<p>.</p>",
+    "description": "<p>Catalog app for ABC Center code, data, models, and demos hosted on GitHub and Hugging Face. Centralized resource to search ABC Center-affiliated products, the content is updated in real-time through calls to the GitHub and Hugging Face APIs. This repository was generated from the Imageomics Catalog Template.</p>\n<p>Catalog website: <a href=\"https://ABC-Center.github.io/catalog/\">ABC-Center.github.io/catalog/</a>.</p>\n<p>.</p>",
     "keywords": [
       "code",
       "data",
       "models",
       "spaces",
+      "demos",
       "GitHub",
       "Hugging Face",
       "APIs",

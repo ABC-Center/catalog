@@ -1,6 +1,6 @@
 # AI & Biodiversity Change Global Center Catalog
 
-Repository for web-based ABC Center code, data, model, and spaces catalog. This catalog is designed to use the GitHub API for searching all code repositories created under the [ABC GitHub Organization](https://github.com/ABC-Center) and the Hugging Face API for searching all dataset, model, and spaces repositories created under the [ABC Hugging Face Organization](https://huggingface.co/ABC-Center). Non-ABC Org GitHub and Hugging Face repositories can be manually included through the `ADDITIONAL_REPOS` and `ADDITIONAL_HF_REPOS` parameters, respectively, in the [config file](public/config.yaml). 
+Repository for web-based catalog of ABC Center code, data, model, and demos. This catalog is designed to use the GitHub API for searching all code repositories created under the [ABC GitHub Organization](https://github.com/ABC-Center) and the Hugging Face API for searching all dataset, model, and spaces repositories created under the [ABC Hugging Face Organization](https://huggingface.co/ABC-Center). Non-ABC Org GitHub and Hugging Face repositories can be manually included through the `ADDITIONAL_REPOS` and `ADDITIONAL_HF_REPOS` parameters, respectively, in the [config file](public/config.yaml). 
 
 This repository was generated and personalized from the [Imageomics Catalog](https://github.com/Imageomics/catalog). The following sections are pulled from the source repo.
 
