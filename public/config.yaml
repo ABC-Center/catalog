@@ -2,7 +2,8 @@
 # Customize these values to personalize the catalog for your organization
 
 # Organization & Repository Settings
-ORGANIZATION_NAME: ABC-Center       # GitHub/Hugging Face organization name for API calls (case-sensitive for HF)
+ORGANIZATION_NAME: ABC-Center       # Codebase platform organization name (for API calls)
+HF_ORGANIZATION_NAME: ABC-Center    # Hugging Face organization name (case-sensitive, for API calls)
 ORG_NAME: ABC-Center         # Display name for GitHub organization (can differ from API name)
 CATALOG_REPO_NAME: catalog          # Repository name for the catalog itself (used for stats badge)
   
