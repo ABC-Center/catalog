@@ -3,6 +3,7 @@ import { validateConfig } from '../src/validateConfig.js';
 
 const VALID_CONFIG = {
     ORGANIZATION_NAME: 'imageomics',
+    HF_ORGANIZATION_NAME: 'imageomics',
     ORG_NAME: 'Imageomics',
     CATALOG_REPO_NAME: 'catalog',
     PLATFORM: 'github',
@@ -53,6 +54,37 @@ describe('validateConfig', () => {
         expect(validateConfig({ ...VALID_CONFIG, ORGANIZATION_NAME: '' })).toContain('ORGANIZATION_NAME');
     });
 
+    it('errors when ORGANIZATION_NAME is not in accepted format for selected platform: GitHub, but okay for other platforms', () => {
+        expect(
+            validateConfig({ ...VALID_CONFIG, ORGANIZATION_NAME: 'abc_center' })
+        ).toContain('ORGANIZATION_NAME (abc_center) is invalid for github API calls, only letters, numbers, and hyphens are allowed');
+    });
+
+    it('does not error when ORGANIZATION_NAME is in accepted format for selected platform: GitLab, but not for GitHub', () => {
+        const config = { ...VALID_CONFIG, PLATFORM: 'gitlab', ORGANIZATION_NAME: 'abc_center' };
+        expect(validateConfig(config)).toEqual([]);
+    });
+
+    it('errors when ORGANIZATION_NAME is not in accepted format for selected platform: Codeberg, and other platforms', () => {
+        const config = { ...VALID_CONFIG, PLATFORM: 'codeberg', ORGANIZATION_NAME: 'abc center' };
+        expect(validateConfig(config)).toContain('ORGANIZATION_NAME (abc center) is invalid for codeberg API calls, only letters, numbers, hyphens, and underscores are allowed');
+    });
+
+    it('errors when HF_ORGANIZATION_NAME is missing', () => {
+        const { HF_ORGANIZATION_NAME: _, ...config } = VALID_CONFIG;
+        expect(validateConfig(config)).toContain('HF_ORGANIZATION_NAME');
+    });
+
+    it('errors when HF_ORGANIZATION_NAME is empty string', () => {
+        expect(validateConfig({ ...VALID_CONFIG, HF_ORGANIZATION_NAME: '' })).toContain('HF_ORGANIZATION_NAME');
+    });
+
+    it('errors when HF_ORGANIZATION_NAME is not in accepted format', () => {
+        expect(
+            validateConfig({ ...VALID_CONFIG, HF_ORGANIZATION_NAME: 'abc center' })
+        ).toContain('HF_ORGANIZATION_NAME (abc center) is invalid, only letters, numbers, hyphens, and underscores are allowed');
+    });
+
     it('errors when ORG_NAME is missing', () => {
         const { ORG_NAME: _, ...config } = VALID_CONFIG;
         expect(validateConfig(config)).toContain('ORG_NAME');
@@ -75,7 +107,11 @@ describe('validateConfig', () => {
         const { PLATFORM: _, ...config } = VALID_CONFIG;
         expect(validateConfig(config)).toContain('PLATFORM');
     });
-    
+
+    it('errors when PLATFORM is not a string', () => {
+        expect(validateConfig({ ...VALID_CONFIG, PLATFORM: 123 })).toContain('PLATFORM');
+    });
+
     it('errors when PLATFORM is unrecognized', () => {
         const errors = validateConfig({ ...VALID_CONFIG, PLATFORM: 'blah' });
         expect(errors.some(e => e.includes('PLATFORM'))).toBe(true);
@@ -141,6 +177,7 @@ describe('validateConfig', () => {
         };
         const errors = validateConfig(config);
         expect(errors).toContain('ORGANIZATION_NAME');
+        expect(errors).toContain('HF_ORGANIZATION_NAME');
         expect(errors).toContain('ORG_NAME');
         expect(errors).toContain('CATALOG_REPO_NAME');
         expect(errors).toContain('PLATFORM');

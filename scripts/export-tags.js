@@ -12,14 +12,14 @@
 // public/config.yaml
 //
 
-import fs from 'fs';
+import { readFileSync, writeFileSync } from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
-import jsYaml from 'js-yaml';
+import { load } from 'js-yaml';
 import { validateConfig } from '../src/validateConfig.js';
-import { getPlatformApiUrls } from '../src/defineApiUrls.js';
-import { getPlatformDisplay } from '../src/defineRibbonVals.js';
-import { filterNewAdditionalEntries } from '../src/filterNewAdditionalEntries.js';
+import { filterNewAdditionalEntries } from '../src/utils/filterNewAdditionalEntries.js';
+import { getPlatformVals, getPlatformApiUrls } from '../src/utils/definePlatformVals.js';
+import { getPlatformHeaders } from './platformScriptHelpers.js';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
@@ -27,7 +27,7 @@ const __dirname = path.dirname(fileURLToPath(import.meta.url));
 // Parse config.yaml to extract the CONFIG object values we need
 // ---------------------------------------------------------------------------
 const configPath = path.resolve(__dirname, '../public/config.yaml');
-const rawConfig = jsYaml.load(fs.readFileSync(configPath, 'utf8'));
+const rawConfig = load(readFileSync(configPath, 'utf8'));
 
 const errors = validateConfig(rawConfig);
 if (errors.length) {
@@ -35,21 +35,21 @@ if (errors.length) {
 }
 
 const CONFIG = rawConfig;
-const { ORGANIZATION_NAME, PLATFORM, API_BASE_URL, ADDITIONAL_REPOS } = CONFIG;
+const { ORGANIZATION_NAME, HF_ORGANIZATION_NAME, API_BASE_URL, ADDITIONAL_REPOS } = CONFIG;
 const ADDITIONAL_HF_REPOS = CONFIG.ADDITIONAL_HF_REPOS;
 
 // ---------------------------------------------------------------------------
 // Fetch helpers
 // ---------------------------------------------------------------------------
-// Update this section as needed for non-GitHub code platforms (e.g., Codeberg or GitLab)
-const GITHUB_TOKEN = process.env.GITHUB_TOKEN || process.env.GH_TOKEN;
+/* Update the corresponding workflow and token as needed for non-GitHub code platforms (e.g., Codeberg or GitLab)
+* `headers['Accept']` is only needed for GitHub to avoid 403 errors on some endpoints.
+*/
+const platform = (CONFIG.PLATFORM || 'github').toLowerCase();
+const { org: ORG_API_URL, repo: REPO_API_URL } = getPlatformApiUrls(platform, ORGANIZATION_NAME);
+const { profileRepo, fullNameKey, forkKey, encodeRepoId } = getPlatformVals(platform);
 
 const get = async (url) => {
-    const headers = {};
-    if (GITHUB_TOKEN && url.includes('api.github.com')) {
-        headers['Authorization'] = `Bearer ${GITHUB_TOKEN}`;
-        headers['Accept'] = 'application/vnd.github+json';
-    }
+    const headers = getPlatformHeaders(url, platform, ORGANIZATION_NAME);
     const res = await fetch(url, { headers });
     if (!res.ok) throw new Error(`HTTP ${res.status} — ${url}`);
     return { json: await res.json(), headers: res.headers };
@@ -59,11 +59,9 @@ const get = async (url) => {
 // Tag collection
 // ---------------------------------------------------------------------------
 const allTags = new Set();
-const { org: ORG_API_URL, repo: REPO_API_URL } = getPlatformApiUrls(PLATFORM, ORGANIZATION_NAME);
 
 const collectCodePlatformTags = async () => {
-    const platformDisplay = getPlatformDisplay(PLATFORM);
-    console.log(`Fetching ${platformDisplay.displayName || PLATFORM} repos...`);
+    console.log(`Fetching ${platform} repos...`);
     let allRepos = [];
     let nextUrl = `${ORG_API_URL}`;
 
@@ -78,26 +76,26 @@ const collectCodePlatformTags = async () => {
     // Additional repos
     const additionalData = await Promise.all(
         ADDITIONAL_REPOS.map(ownerRepo =>
-            get(`${REPO_API_URL}${ownerRepo}`)
+            get(`${REPO_API_URL}${encodeRepoId(ownerRepo)}`)
                 .then(({ json }) => json)
                 .catch(() => null)
         )
     );
     const additionalRepos = additionalData.filter(Boolean);
 
-    const additionalNames = new Set(additionalRepos.map(r => r.full_name));
-    const orgNonForks = allRepos.filter(r => r.name !== '.github' && !r.fork && !additionalNames.has(r.full_name));
+    const additionalNames = new Set(additionalRepos.map(r => r[fullNameKey]));
+    const orgNonForks = allRepos.filter(r => r.name !== profileRepo && !r[forkKey] && !additionalNames.has(r[fullNameKey]));
 
     [...additionalRepos, ...orgNonForks].forEach(repo => {
         (repo.topics || []).forEach(t => allTags.add(t.toLowerCase()));
     });
 
-    console.log(`  ${platformDisplay.displayName || PLATFORM}: processed ${orgNonForks.length} org repos + ${additionalRepos.length} additional repos`);
+    console.log(`  ${platform}: processed ${orgNonForks.length} org repos + ${additionalRepos.length} additional repos`);
 };
 
 const collectHFTags = async (repoType) => {
     console.log(`Fetching HF ${repoType}...`);
-    let items = (await get(`${API_BASE_URL}${repoType}?author=${ORGANIZATION_NAME}&full=true`)).json;
+    let items = (await get(`${API_BASE_URL}${repoType}?author=${HF_ORGANIZATION_NAME}&full=true`)).json;
 
     // Fetch additional HF repos of this type
     const additionalForType = ADDITIONAL_HF_REPOS.filter(entry => entry.type === repoType);
@@ -145,7 +143,7 @@ const collectHFTags = async (repoType) => {
 
         const sorted = Array.from(allTags).sort();
         const outPath = path.resolve(__dirname, 'tag-export.txt');
-        fs.writeFileSync(outPath, sorted.join('\n') + '\n', 'utf8');
+        writeFileSync(outPath, sorted.join('\n') + '\n', 'utf8');
 
         console.log(`\nDone. ${sorted.length} unique tags written to scripts/tag-export.txt`);
     } catch (err) {

@@ -2,7 +2,8 @@
 # Customize these values to personalize the catalog for your organization
 
 # Organization & Repository Settings
-ORGANIZATION_NAME: ABC-Center       # GitHub/Hugging Face organization name for API calls (case-sensitive for HF)
+ORGANIZATION_NAME: ABC-Center       # Codebase platform organization name (for API calls)
+HF_ORGANIZATION_NAME: ABC-Center    # Hugging Face organization name (case-sensitive, for API calls)
 ORG_NAME: ABC-Center         # Display name for GitHub organization (can differ from API name)
 CATALOG_REPO_NAME: catalog          # Repository name for the catalog itself (used for stats badge)
   
@@ -21,9 +22,9 @@ COLORS:
   tag: "#4fb797a1"        # Tag background color (ABC turquoise 63% alpha)
 
 # API & Behavior Settings
-# Codebase platform for API calls and link generation. Supported values: "github", pending: "codeberg" or "gitlab".
+# Codebase platform for API calls and link generation. Supported values: "github", "codeberg", or "gitlab".
 PLATFORM: github
-# Dataset, model, and space (demo) default: Hugging Face, other platforms would require a custom module
+# Dataset, model, and demo default: Hugging Face, other platforms would require a custom module
 API_BASE_URL: "https://huggingface.co/api/"
 # Define "new" repository criteria
 REFRESH_INTERVAL_DAYS: 30
@@ -41,7 +42,8 @@ ADDITIONAL_REPOS:
   - "kitzeslab/Kitzes_MethodsEcolEvo_manuscript_2025"
 
 # Array of Hugging Face repos from outside the org to include.
-# Each entry must specify "repo" (owner/name) and "type" (datasets, models, or spaces).
+# Each entry must specify "repo" (owner/name) and "type" (datasets, models, or spaces/demos).
+# Organization names are case-sensitive in the Hugging Face API.
 # ADDITIONAL_HF_REPOS:
 #   - repo: "user/dataset-name"
 #     type: "datasets"
