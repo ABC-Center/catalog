@@ -40,6 +40,9 @@ ADDITIONAL_REPOS:
   - "FrsLry/ms_acceleration"
   - "Imageomics/Collaborative-distributed-science-guide"
   - "kitzeslab/Kitzes_MethodsEcolEvo_manuscript_2025"
+  # 2024-2025 AI & Ecology Course (Hawaii field component), co-supported by Imageomics & ABC
+  - "Imageomics/invasives-project"
+  - "Imageomics/carabidae_beetle_processing"
 
 # Array of Hugging Face repos from outside the org to include.
 # Each entry must specify "repo" (owner/name) and "type" (datasets, models, or spaces/demos).
@@ -55,6 +58,21 @@ ADDITIONAL_HF_REPOS:
   - repo: "yuyan-chen/open-insect"
     type: "datasets"
   - repo: "chaenayo/PODS"
+    type: "datasets"
+  # 2024-2025 AI & Ecology Course (Hawaii field component), co-supported by Imageomics & ABC
+  - repo: "imageomics/invasive_plants_hawaii"
+    type: "datasets"
+  - repo: "imageomics/Hawaii-beetles"
+    type: "datasets"
+  - repo: "imageomics/phenology-normal-hawaii"
+    type: "datasets"
+  - repo: "imageomics/PUUM_pheno_transect_cams"
+    type: "datasets"
+  - repo: "imageomics/PUUM-koa-restoration-camera-trap-dataset"
+    type: "datasets"
+  - repo: "imageomics/acoustic-PUUM"
+    type: "datasets"
+  - repo: "imageomics/upper-waiakea-PAM"
     type: "datasets"
 
 # Typography
