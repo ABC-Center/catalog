@@ -40,7 +40,7 @@ ADDITIONAL_REPOS:
   - "FrsLry/ms_acceleration"
   - "Imageomics/Collaborative-distributed-science-guide"
   - "kitzeslab/Kitzes_MethodsEcolEvo_manuscript_2025"
-  # 2024-2025 AI & Ecology Course (Hawaii field component), co-supported by Imageomics & ABC
+  # 2024-2025 AI & Ecology Course (Hawaii field component)
   - "Imageomics/invasives-project"
   - "Imageomics/carabidae_beetle_processing"
 
@@ -59,7 +59,7 @@ ADDITIONAL_HF_REPOS:
     type: "datasets"
   - repo: "chaenayo/PODS"
     type: "datasets"
-  # 2024-2025 AI & Ecology Course (Hawaii field component), co-supported by Imageomics & ABC
+  # 2024-2025 AI & Ecology Course (Hawaii field component)
   - repo: "imageomics/invasive_plants_hawaii"
     type: "datasets"
   - repo: "imageomics/Hawaii-beetles"
