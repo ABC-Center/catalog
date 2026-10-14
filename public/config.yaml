@@ -43,6 +43,15 @@ ADDITIONAL_REPOS:
   # 2024-2025 AI & Ecology Course (Hawaii field component)
   - "Imageomics/invasives-project"
   - "Imageomics/carabidae_beetle_processing"
+  # ABC-affiliated repos
+  - "melisandeteng/BalSAM"
+  - "RolnickLab/DINOvTree"
+  - "RolnickLab/CISO-SDM"
+  - "echerif18/HyspectraSSL"
+  - "RupaKurinchiVendhan/PRISM"
+  - "RupaKurinchiVendhan/Transductive-AL-for-Ecology"
+  - "Beery-Lab/INQUIRE-Search"
+  - "RolnickLab/antenna"
 
 # Array of Hugging Face repos from outside the org to include.
 # Each entry must specify "repo" (owner/name) and "type" (datasets, models, or spaces/demos).
@@ -74,6 +83,11 @@ ADDITIONAL_HF_REPOS:
     type: "datasets"
   - repo: "imageomics/upper-waiakea-PAM"
     type: "datasets"
+  # ABC-affiliated repos from the Publications & Presentations spreadsheet (digital-infra #4)
+  - repo: "Avatarr05/GreenHyperSpectra"
+    type: "datasets"
+  - repo: "Avatarr05/Multi-trait_SSL"
+    type: "models"
 
 # Typography
 FONT_FAMILY: Inter    # Font family for the site
