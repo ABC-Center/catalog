@@ -82,7 +82,8 @@ const TAG_GROUPS = {
     "birds": [
         "bird", "birds", "hawaiian birds", "hawaiian-birds", "hawaiian-honeycreeper",
         "endemic birds", "endemic-birds", "birdnet", "white-eye", "amakihi", "apapane", "omao", "kalij",
-        "akala", "haha"
+        "akala", "haha",
+        "bird habitat", "bird-habitat"
     ],
     "butterflies": [
         "butterfly", "butterflies", "lepidoptera", "heliconius",
@@ -146,6 +147,7 @@ const TAG_GROUPS = {
         "camera trap", "camera traps", "camera-trap", "camera-traps",
         "motion activated", "motion-activated", "motion triggered", "motion-triggered",
         "passive acoustic monitoring", "bioacoustics", "soundscape",
+        "audio",
         "telemetry", "gps tracker", "gps-tracker"
     ],
     "mpala research centre": [
@@ -166,7 +168,8 @@ const TAG_GROUPS = {
         "image classification", "image-classification",
         "image recognition", "image-recognition",
         "species classification", "species-classification",
-        "species identification", "species-identification"
+        "species identification", "species-identification",
+        "classification"
     ],
     "fine-grained classification": [
         "fine-grained classification", "fine-grained-classification"
@@ -177,13 +180,19 @@ const TAG_GROUPS = {
         "detection",
         "face detection", "face-detection",
         "tree seedling detection", "tree-seedling-detection",
-        "hybrid detection", "hybrid-detection"
+        "hybrid detection", "hybrid-detection",
+        "megadetector"
+    ],
+    "segmentation": [
+        "segmentation", "image-segmentation", "trait segmentation", "trait-segmentation",
+        "wing segmentation", "wing-segmentation"
     ],
     "machine learning": [
         "machine learning", "applied machine learning", "ml",
         "deep learning", "deep-learning",
         "knowledge guided", "knowledge-guided",
-        "knowledge guided machine learning", "knowledge-guided-machine-learning"
+        "knowledge guided machine learning", "knowledge-guided-machine-learning",
+        "clustering"
     ],
     "model": [
         "model", "models"
@@ -330,11 +339,13 @@ const TAG_GROUPS = {
         "tree seedling detection", "tree-seedling-detection",
         // foliage
         "leaf", "leaves",
-        "leaf damage", "leaf-damage"
+        "leaf damage", "leaf-damage",
+        "damage", "disease"
     ],
     "forest": [
         "cloud forest", "cloud-forest",
-        "understory", "hawaiian forest", "hawaiian-forest"
+        "understory", "hawaiian forest", "hawaiian-forest",
+        "kipuka"
     ],
     "hawaiian plants": [
         "acacia koa", "koa", "o'hia", "ohelo", "pilo", "pukiawe",
@@ -359,7 +370,10 @@ const TAG_GROUPS = {
         "endangered species", "rare species", "rare-species",
         "invasive species", "invasive-species",
         "invasive mammals", "invasive-mammals",
-        "endemic species", "endemic-species"
+        "endemic species", "endemic-species",
+        "invasive",
+        "biocontrol agents", "biocontrol-agents",
+        "fragmented habitat", "fragmented-habitat"
     ],
     "drought": [
         "drought", "spei"
@@ -391,7 +405,8 @@ const TAG_GROUPS = {
         "cli", "command line interface", "command-line-interface",
         "pipelines", "workflow automation", "workflow-automation", "snakemake",
         "containerization", "containerization with docker", "containerization-with-docker",
-        "version control", "version-control"
+        "version control", "version-control",
+        "fiftyone", "bioclip"
     ],
     "vega": [
         "vega", "vega-lite"
