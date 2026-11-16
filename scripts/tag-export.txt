@@ -1,48 +1,148 @@
+acacia koa
+akala
+amakihi
+animals
+annotation
+annotations
+apapane
 api
+audio
+basal pronotum
+beetles
 best-practices
+bioacoustics
+bioclip
+biocontrol agents
+biodiversity
+biology
+bird habitat
+birds
+camera-trap
+camera-traps
+carabidae
 catalog
+citizen-science
+classification
 cli-cheatsheet
+clidemia hirta
+cloud-forest
+clustering
 code
 collaboration
 collaborative-workflows
+computer vision
 computer-vision
+conservation
+cv
+damage
+darwin-core
 data
 dataset
 discoverability
+discrete wavelet transform
+disease
 documentation
+drone
+ecology
+elytra
+endemic-birds
+endemic-species
 epfl
 fair
+fair2
+fiftyone
 format:csv
+fragmented habitat
+fungi
 git
 github
+greenness
+ground-beetles
 guide
+haha
+hawaii
+hawaiian birds
+hawaiian-forest
+hawaiian-honeycreeper
 huggingface
+humboldt-eco
+image
+image-classification
 imageomics
+images
+insect
 instance_classification
 instance_detection
 instance_retrieval
 instance_segmentation
 interdisciplinary
+invasive
+invasive species
+invasive-mammals
+invasive-species
 inventory
+kalij
 keyword-search
+kipuka
+koa
+leaf damage
+leaves
 library:datasets
 library:mlcroissant
 library:pandas
 library:polars
 license:cc-by-nc-sa-4.0
+mammals
+measurements
+megadetector
 metadata
 modality:image
 modality:tabular
 modality:text
 models
+morphometrics
+motion-activated
+motion-triggered
+multimodal
+neon
+neon-data
+nocturnal
+o'hia
+object-detection
+ohelo
+ohio
+omao
 open-science
 open-source
+passive acoustic monitoring
 personalization
+phenology
+pilo
+pinned specimens
+pinned-specimens
+plant-phenology
+plants
 projects
+pukiawe
 region:us
+restoration
 searchability
+segmentation
+sensor-networks
 size_categories:1m<n<10m
+small leaf kolea
+smartwilds
 spaces
+species
+species-identification
 standards
 static
+the-wilds
+time series
+traits
+tree
+tree planting
+understory
+unlabeled
+white-eye
 wildlife-conservation
